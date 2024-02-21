@@ -13,6 +13,7 @@ def test_pedido_francisco():
     print(pedido1)
     assert pedido1.destinatario == 'Francisco'
 
+
 def test_pedido_francisco_cerna():
     builder = ClientePremiumPedidoBuilder()
     director = PedidoDirector(builder)
