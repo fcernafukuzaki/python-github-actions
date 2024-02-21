@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+
+
 # Clase Pedido pedido.py
 class Pedido():
     def __init__(self):
@@ -6,11 +9,11 @@ class Pedido():
         self.costo_envio = None
 
     def __str__(self):
-        return f'El destinatario {self.destinatario} ha pedido los productos: {self.productos}. El costo de envío es: {self.costo_envio}'
+        return f'El destinatario {self.destinatario} ha pedido los productos: {self.productos}. \
+                El costo de envío es: {self.costo_envio}'
+
 
 # Clase PedidoBuilder pedido_builder.py
-from abc import ABC, abstractmethod
-
 class PedidoBuilder(ABC):
     """
     Interfaz a la clase Pedido con los métodos para crear la clase Pedido.
@@ -31,6 +34,7 @@ class PedidoBuilder(ABC):
     @abstractmethod
     def build(self):
         pass
+
 
 # Clase ClientePremiumPedidoBuilder clientepremiumpedido_builder.py
 class ClientePremiumPedidoBuilder(PedidoBuilder):
@@ -67,6 +71,7 @@ class ClientePremiumPedidoBuilder(PedidoBuilder):
         self.reset()
         return pedido
 
+
 # Clase PedidoDirector pedido_director.py
 class PedidoDirector:
     def __init__(self, builder):
@@ -78,6 +83,7 @@ class PedidoDirector:
             .add_productos(productos) \
             .set_costo_envio(costo_envio) \
             .build()
+
 
 # Clase Main main.py
 # Uso del patrón Builder
