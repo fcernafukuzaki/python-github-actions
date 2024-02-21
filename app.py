@@ -9,8 +9,7 @@ class Pedido():
         self.costo_envio = None
 
     def __str__(self):
-        return f'El destinatario {self.destinatario} ha pedido los productos: {self.productos}. \
-                El costo de envío es: {self.costo_envio}'
+        return f'El destinatario {self.destinatario} ha pedido los productos: {self.productos}. El costo de envío es: {self.costo_envio}'
 
 
 # Clase PedidoBuilder pedido_builder.py
