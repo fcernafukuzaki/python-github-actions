@@ -5,4 +5,8 @@ def test_python_version():
     version = f'{sys.version_info.major}.{sys.version_info.minor}'
     print(f'Versión de Python: {version}')
 
-    assert version >= "3.9", 'Se está usando una versión inferior a Python 3.9.'
+    flag = True
+    if not sys.version_info.major == 3 and sys.version_info.minor >= 9:
+        flag = False
+
+    assert flag, 'Se está usando una versión inferior a Python 3.9.'
